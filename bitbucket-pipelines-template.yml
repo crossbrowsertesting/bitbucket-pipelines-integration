@@ -1,0 +1,12 @@
+pipelines:
+  default:
+    - step:
+        script:
+          #Place any steps necessary to the build that should abort the build upon failure before the chmod command
+
+          - chmod u+x start_connection.sh stop_connection.sh #Gives execute permissions to scripts
+          - ./cbt_scripts/start_connection.sh
+          - set +e 
+          #Place the command(s) to run your test(s) here. We have run "set +e" to ensure the local connection is closed even if the test does not finish or encounters any errors
+
+          - ./cbt_scripts/stop_connection.sh

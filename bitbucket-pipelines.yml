@@ -1,0 +1,15 @@
+# Only use spaces to indent your .yml configuration.
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+pipelines:
+  default:
+    - step:
+        script:
+          - chmod u+x cbt_scripts/start_connection.sh cbt_scripts/stop_connection.sh install_dependencies.sh #Gives execute permissions to scripts
+          - ./install_dependencies.sh
+          - ./cbt_scripts/start_connection.sh
+          - http-server & #Starts a server for our sample page
+          - sleep 10s #Allows server to start fully
+          - set +e #Allows local connection closure command to run even if test gives an error
+          - python ./python_test/bbpipeline.py
+          - ./cbt_scripts/stop_connection.sh
