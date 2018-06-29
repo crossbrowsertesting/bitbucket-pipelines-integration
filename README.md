@@ -15,7 +15,7 @@ Bitbucket Pipelines is a CI service that allows automatic building, testing, and
 In this example, we use the two shell scripts in the cbt_scripts folder to start and close a local connection. We encourage you to use these, as they are the easiest way to set up a local connection in a Pipeline build.
 Since this is a working example for our Python script, we have also included a template bitbucket-pipelines.yml file that contains no extra steps and has commented spaces to place your code in. Fill in the commands needed to build and execute your tests, then place your bitbucket-pipelines.yml file and cbt_scripts folder in the root of your repository.
 Once everything is set up, your bitbucket-pipelines.yml file will run after every commit (you can change the conditions that trigger a build in your Pipelines settings). A successful run will look something like this:
-![Bitbucket Pipeline build](https://github.com/crossbrowsertesting/bitbucket-pipelines-integration/images/successful_build.png)
+![Bitbucket Pipeline build](https://github.com/crossbrowsertesting/bitbucket-pipelines-integration/blob/master/images/successful_build.png?raw=true)
 
 
 ## Considerations
